@@ -27,6 +27,7 @@ const Feed = () => {
     } else {
       params.delete("query");
     }
+    //updates the URL with the user's search data. For example, /dashboard/invoices?query=lee if the user searches for "Lee"
     replace(`${pathname}?${params.toString()}`);
   };
   useEffect(() => {
