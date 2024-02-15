@@ -17,19 +17,19 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
-  const handleSearchChange = (term) => {
-    const params = new URLSearchParams(searchParams);
-    if (term) {
-      params.set("query", term);
-    } else {
-      params.delete("query");
-    }
-    //updates the URL with the user's search data. For example, /dashboard/invoices?query=lee if the user searches for "Lee"
-    replace(`${pathname}?${params.toString()}`);
-  };
+  // const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const { replace } = useRouter();
+  // const handleSearchChange = (term) => {
+  //   const params = new URLSearchParams(searchParams);
+  //   if (term) {
+  //     params.set("query", term);
+  //   } else {
+  //     params.delete("query");
+  //   }
+  //   //updates the URL with the user's search data. For example, /dashboard/invoices?query=lee if the user searches for "Lee"
+  //   replace(`${pathname}?${params.toString()}`);
+  // };
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
@@ -38,13 +38,13 @@ const Feed = () => {
     };
     fetchPosts();
   }, []);
-  const query = searchParams.get("query")?.toString() || "";
-  const filteredPosts = posts.filter(
-    (post) =>
-      query === "" ||
-      post.tag.toLowerCase().includes(query.toLowerCase()) ||
-      post.prompt.toLowerCase().includes(query.toLowerCase())
-  );
+  // const query = searchParams.get("query")?.toString() || "";
+  // const filteredPosts = posts.filter(
+  //   (post) =>
+  //     query === "" ||
+  //     post.tag.toLowerCase().includes(query.toLowerCase()) ||
+  //     post.prompt.toLowerCase().includes(query.toLowerCase())
+  // );
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
