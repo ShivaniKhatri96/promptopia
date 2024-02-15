@@ -57,7 +57,7 @@ const Feed = () => {
           defaultValue={query}
         />
       </form>
-      <PromptCardList data={filteredPosts} handleTagClick={() => {}} />
+      {/* <PromptCardList data={filteredPosts} handleTagClick={() => {}} /> */}
     </section>
   );
 };
