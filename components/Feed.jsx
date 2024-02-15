@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import PromptCard from "./PromptCard";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 const PromptCardList = ({ data, handleTagClick }) => {
